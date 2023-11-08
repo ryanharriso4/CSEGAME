@@ -11,7 +11,7 @@ public class Move : MonoBehaviour
     private bool moveUp; 
     private Animator animator;
 
-    
+    public LayerMask SolidObjects; 
 
     private float horizontalMove;
     private float verticalMove; 
@@ -58,30 +58,30 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer (); 
+        MovePlayer(); 
     }
 
     private void MovePlayer()
     {
-        if(moveLeft) {
+        if(moveLeft && canMove(0.0f, -0.3f)){
             horizontalMove = - speed; 
             animator.SetFloat("moveX", -1); 
             animator.SetFloat("moveY", 0); 
             animator.SetBool("isMoving", true); 
         }
-        else if(moveRight) {
+        else if(moveRight && canMove(0.0f, 0.3f)) {
             horizontalMove = speed;
             animator.SetFloat("moveX", 1); 
             animator.SetFloat("moveY", 0);
             animator.SetBool("isMoving", true); 
         }
-        else if(moveUp){ 
+        else if(moveUp && canMove(0.3f, 0.0f)){ 
             verticalMove = speed;
             animator.SetFloat("moveX", 0); 
             animator.SetFloat("moveY", -1);
             animator.SetBool("isMoving", true); 
         }
-        else if(moveDown) {
+        else if(moveDown && canMove(-0.3f, 0.0f)) {
             verticalMove = -speed; 
             animator.SetFloat("moveX", 0); 
             animator.SetFloat("moveY", 1);
@@ -98,6 +98,15 @@ public class Move : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalMove, verticalMove); 
+    }
+
+    private bool canMove(float vertical, float horizontal)
+    {
+        var targetPos = rb.position; 
+        targetPos.x += horizontal;
+        targetPos.y += vertical; 
+        if(Physics2D.OverlapCircle(targetPos, 0.3f, SolidObjects) != null) return false; 
+        return true; 
     }
     
 }
