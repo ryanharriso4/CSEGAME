@@ -7,10 +7,12 @@ public class PlayerHealth : MonoBehaviour
     public int health; 
     public int maxHealth = 20; 
     public int damage = 3;
+    Vector2 startPos;
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth; 
+        startPos = transform.position; 
     }
 
     public void TakeDamage(int amount)
@@ -18,7 +20,8 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         if(health <= 0)
         {
-            Destroy(gameObject); 
+            transform.position = startPos; 
+            health = maxHealth; 
         }
     }
 
