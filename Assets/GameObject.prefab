@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 5699455975111439644}
   - component: {fileID: 7999420062217307238}
   - component: {fileID: 8846015003993163734}
+  - component: {fileID: 7302890726064709016}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -313,6 +314,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 5949982121535799941}
+--- !u!114 &7302890726064709016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161813952904797195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb35f4aba744d483baf0f84490cced04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  damage: 2
 --- !u!1 &1403872886326874896
 GameObject:
   m_ObjectHideFlags: 0
@@ -25525,6 +25540,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1291925492593278910, guid: 54f1dc5bea9964b5090907ff2e00baeb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 142540755765164177}
+    - targetCorrespondingSourceObject: {fileID: 1291925492593278910, guid: 54f1dc5bea9964b5090907ff2e00baeb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8463504552425027343}
   m_SourcePrefab: {fileID: 100100000, guid: 54f1dc5bea9964b5090907ff2e00baeb, type: 3}
 --- !u!4 &131628004065253850 stripped
 Transform:
@@ -25608,3 +25626,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &8463504552425027343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296958732618999716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca0de3b884484ad5b6c575c70a7ebc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  enragedAttackDamage: 40
+  attackOffset: {x: 0, y: 0, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 0

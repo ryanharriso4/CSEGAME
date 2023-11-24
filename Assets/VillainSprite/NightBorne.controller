@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bce063f4e2a4aee89fa1930e048a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2.5
+  attackRange: 1
 --- !u!1102 &-1256956539526739872
 AnimatorState:
   serializedVersion: 6
@@ -103,13 +105,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -239,7 +241,7 @@ AnimatorStateMachine:
     m_Position: {x: 80, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1256956539526739872}
-    m_Position: {x: 208.82437, y: 171.91418, z: 0}
+    m_Position: {x: 210, y: 170, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

@@ -22,7 +22,7 @@ public class Boss_Run : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        Vector2 target = new Vector2(player.position.x, rb.position.y);
+     Vector2 target = new Vector2(player.position.x, rb.position.y);
 	Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
 	rb.MovePosition(newPos); 
 	
@@ -31,6 +31,8 @@ public class Boss_Run : StateMachineBehaviour
 	{
 		animator.SetTrigger("attack");
 	}
+
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

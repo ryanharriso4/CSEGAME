@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class Move : MonoBehaviour, IDataPersistence
 {
     private Rigidbody2D rb; 
     private bool moveLeft; 
@@ -109,4 +109,14 @@ public class Move : MonoBehaviour
         return true; 
     }
     
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveData(ref GameData data) 
+    {
+        data.playerPosition = this.transform.position; 
+    }
 }
