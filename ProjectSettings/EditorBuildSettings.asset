@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/StartMenu.unity
     guid: bb0fc1e1493864978b3900e975afd37f
   - enabled: 1
-    path: Assets/SampleScene.unity
+    path: Assets/Earth.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Moon.unity
+    guid: 658f6a8630b0c044d947e8388054e1d1
   m_configObjects: {}
