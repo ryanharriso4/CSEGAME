@@ -16,7 +16,6 @@ public class CharSelector : MonoBehaviour
     public List<GameObject> options = new List<GameObject>();
 
     private int currentOption = 0;
-    private int playerSelected = 0;
 
     public Animator animator;
 
