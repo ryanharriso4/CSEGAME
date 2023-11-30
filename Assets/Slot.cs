@@ -28,4 +28,14 @@ public class Slot : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
     }
+
+    public void boughtItem()
+    {
+        foreach(Transform child in transform)
+        {
+            //child.GetComponent<Spawn>().SpawnDroppedItem();
+            GameObject.Destroy(child.gameObject);
+            
+        }
+    }
 }
